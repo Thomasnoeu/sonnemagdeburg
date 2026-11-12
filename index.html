@@ -2,8 +2,8 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Handgemachtes &amp; Kreatives</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Katrin's Kreativ-Werkstatt – Handgemachtes &amp; Kreatives</title>
   <style>
     :root {
       --bg-cream: #FAF6F0;
@@ -25,6 +25,8 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
+      width: 100%;
     }
 
     body {
@@ -33,7 +35,9 @@
       color: var(--text-dark);
       line-height: 1.6;
       overflow-x: hidden;
+      width: 100%;
       position: relative;
+      -webkit-text-size-adjust: 100%;
     }
 
     /* Dezente Sonnen-Ornamente im Hintergrund */
@@ -41,7 +45,7 @@
       position: fixed;
       pointer-events: none;
       z-index: 0;
-      opacity: 0.24;
+      opacity: 0.22;
     }
     .bg-sun-left {
       top: 44%;
@@ -59,34 +63,39 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(250, 246, 240, 0.94);
+      width: 100%;
+      background: rgba(250, 246, 240, 0.96);
       backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border-soft);
     }
 
     .nav-container {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 1rem 1.5rem;
+      padding: 0.9rem 1.25rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 0.65rem;
+      gap: 0.6rem;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 600;
       color: var(--text-dark);
       text-decoration: none;
+      white-space: nowrap;
     }
 
     .brand-dot {
-      width: 14px;
-      height: 14px;
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
       border-radius: 50%;
       background: radial-gradient(circle, #E5B158 30%, #C88A2E 100%);
       box-shadow: 0 0 0 4px rgba(212, 155, 66, 0.18);
@@ -95,7 +104,8 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1.75rem;
+      align-items: center;
+      gap: 1.6rem;
     }
 
     nav a {
@@ -103,6 +113,7 @@
       color: var(--text-muted);
       font-size: 0.95rem;
       font-weight: 500;
+      white-space: nowrap;
       transition: color 0.2s ease;
     }
 
@@ -115,14 +126,14 @@
       position: relative;
       z-index: 1;
       max-width: 1120px;
-      margin: 1.5rem auto 3.5rem;
-      padding: 0 1.5rem;
+      margin: 1.25rem auto 3rem;
+      padding: 0 1.25rem;
     }
 
     .hero-box {
       position: relative;
       border-radius: 16px;
-      padding: 4.8rem 2rem 6.8rem;
+      padding: 4.5rem 1.75rem 6.5rem;
       text-align: center;
       color: #FFFFFF;
       background: linear-gradient(120deg, var(--hero-brown) 0%, #9E7444 52%, var(--hero-gold) 100%);
@@ -148,29 +159,28 @@
     /* Magdeburg Skyline Silhouette am unteren Rand des Headers */
     .magdeburg-skyline {
       position: absolute;
-      bottom: -2px;
+      bottom: -1px;
       left: 0;
       width: 100%;
-      height: auto;
-      max-height: 125px;
+      height: 95px;
       pointer-events: none;
       z-index: 1;
     }
 
     .hero h1 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2rem, 4.2vw, 3.1rem);
+      font-size: clamp(1.75rem, 4.5vw, 3.1rem);
       font-weight: 400;
-      line-height: 1.2;
+      line-height: 1.22;
       margin-bottom: 1rem;
       letter-spacing: -0.01em;
     }
 
     .hero p {
-      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      font-size: clamp(0.98rem, 1.8vw, 1.2rem);
       color: rgba(255, 255, 255, 0.94);
       max-width: 560px;
-      margin: 0 auto 2rem;
+      margin: 0 auto 1.85rem;
     }
 
     .btn-primary {
@@ -178,7 +188,7 @@
       background-color: var(--accent-gold);
       color: #FFFFFF;
       text-decoration: none;
-      padding: 0.78rem 1.85rem;
+      padding: 0.8rem 1.85rem;
       border-radius: 8px;
       font-weight: 600;
       font-size: 0.95rem;
@@ -196,17 +206,17 @@
       position: relative;
       z-index: 1;
       max-width: 1120px;
-      margin: 0 auto 4.5rem;
-      padding: 0 1.5rem;
+      margin: 0 auto 4rem;
+      padding: 0 1.25rem;
     }
 
     .section-header {
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
     }
 
     .section-header h2 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.85rem;
+      font-size: clamp(1.55rem, 3vw, 1.85rem);
       font-weight: 400;
       color: var(--text-dark);
       margin-bottom: 0.4rem;
@@ -214,14 +224,14 @@
 
     .section-header p {
       color: var(--text-muted);
-      font-size: 1rem;
+      font-size: 0.98rem;
     }
 
     /* Produkt-Grid */
     .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
-      gap: 1.75rem;
+      gap: 1.5rem;
     }
 
     .product-card {
@@ -279,7 +289,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-top: 0.6rem;
+      padding-top: 0.65rem;
       border-top: 1px solid var(--border-soft);
     }
 
@@ -293,9 +303,9 @@
       background-color: var(--accent-gold);
       color: #FFFFFF;
       text-decoration: none;
-      padding: 0.45rem 0.95rem;
+      padding: 0.5rem 1rem;
       border-radius: 6px;
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       font-weight: 600;
       transition: background-color 0.2s ease;
     }
@@ -334,7 +344,7 @@
 
     .about-text h2 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.75rem;
+      font-size: clamp(1.5rem, 3vw, 1.75rem);
       font-weight: 400;
       margin-bottom: 0.9rem;
     }
@@ -348,7 +358,7 @@
       margin-top: 1.4rem;
       background: var(--bg-cream);
       border-radius: 10px;
-      padding: 1.25rem 1.5rem;
+      padding: 1.25rem 1.4rem;
       border: 1px solid var(--border-soft);
     }
 
@@ -374,12 +384,12 @@
       background: var(--bg-card);
       border: 1px solid var(--border-soft);
       border-radius: 14px;
-      padding: 3rem 1.5rem;
+      padding: 2.75rem 1.25rem;
     }
 
     .contact-banner h2 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.8rem;
+      font-size: clamp(1.55rem, 3vw, 1.8rem);
       font-weight: 400;
       margin-bottom: 0.75rem;
     }
@@ -392,27 +402,87 @@
 
     footer {
       text-align: center;
-      padding: 2rem 1.5rem 3rem;
+      padding: 2rem 1.25rem 3rem;
       color: var(--text-muted);
       font-size: 0.85rem;
       border-top: 1px solid var(--border-soft);
     }
 
+    /* Smartphone & Tablet Feinschliff (kein Abschneiden, kein horizontales Wackeln) */
     @media (max-width: 768px) {
-      nav ul {
-        gap: 1rem;
+      .nav-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        gap: 0.55rem;
       }
+
+      .brand {
+        font-size: 1.15rem;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      nav ul {
+        justify-content: center;
+        gap: 1.15rem;
+        width: 100%;
+      }
+
+      nav a {
+        font-size: 0.88rem;
+      }
+
+      .hero {
+        margin: 1rem auto 2.5rem;
+        padding: 0 1rem;
+      }
+
+      .hero-box {
+        padding: 3.1rem 1.2rem 4.8rem;
+        border-radius: 14px;
+      }
+
+      .magdeburg-skyline {
+        height: 62px;
+      }
+
+      .hero-sun-decor {
+        width: 150px;
+        top: -35px;
+        right: -35px;
+      }
+
+      .bg-sun-left, .bg-sun-right {
+        width: 170px;
+        opacity: 0.16;
+      }
+
+      section {
+        margin-bottom: 3rem;
+        padding: 0 1rem;
+      }
+
       .about-card {
         grid-template-columns: 1fr;
-        padding: 1.75rem;
-        gap: 1.75rem;
+        padding: 1.5rem 1.25rem;
+        gap: 1.5rem;
       }
+
       .about-photo-wrap {
-        max-width: 240px;
+        max-width: 220px;
         margin: 0 auto;
       }
-      .hero-box {
-        padding: 3.8rem 1.25rem 5.2rem;
+    }
+
+    @media (max-width: 380px) {
+      nav ul {
+        gap: 0.85rem;
+      }
+      nav a {
+        font-size: 0.83rem;
       }
     }
   </style>
@@ -434,7 +504,7 @@
     <div class="nav-container">
       <a href="#home" class="brand">
         <span class="brand-dot"></span>
-        Katrin's Kreativ-Werkstatt
+        Sonne MD
       </a>
       <nav>
         <ul>
@@ -461,7 +531,7 @@
         <a href="#produkte" class="btn-primary">Stücke entdecken</a>
       </div>
 
-      <!-- Stilisierte Magdeburg Skyline (Dom-Doppeltürme, Johanniskirche, Grüne Zitadelle, Sternbrücke & Elbwelle) -->
+      <!-- Stilisierte Magdeburg Skyline -->
       <svg class="magdeburg-skyline" viewBox="0 0 1200 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <path fill="rgba(250, 246, 240, 0.22)" d="
           M0,150 L0,122 L55,122 L55,108 L85,108 L85,122 L130,122
@@ -497,7 +567,7 @@
         <p class="product-desc">Mit viel Liebe und Sorgfalt in Handarbeit gefertigt – ein besonderes Einzelstück.</p>
         <div class="product-footer">
           <span class="product-price">120,00 €</span>
-          <a class="btn-inquire" href="mailto:sonnemagdeburg@aol.com?subject=Anfrage%3A%20Unikat%20Nr.%201&body=Hallo%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20das%20Unikat%20Nr.%201%20(17%2C00%20%E2%82%AC).%20Ist%20dieses%20St%C3%BCck%20noch%20verf%C3%BCgbar%3F%0A%0ALiebe%20Gr%C3%BC%C3%9Fe">Anfragen</a>
+          <a class="btn-inquire" href="mailto:sonnemagdeburg@aol.com?subject=Anfrage%3A%20Unikat%20Nr.%201&body=Hallo%20Katrin%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20das%20Unikat%20Nr.%201%20(120%2C00%20%E2%82%AC).%20Ist%20dieses%20St%C3%BCck%20noch%20verf%C3%BCgbar%3F%0A%0ALiebe%20Gr%C3%BC%C3%9Fe">Anfragen</a>
         </div>
       </article>
 
@@ -510,7 +580,7 @@
         <p class="product-desc">Liebevoll gestaltetes Einzelstück als Geschenk oder für ein gemütliches Zuhause.</p>
         <div class="product-footer">
           <span class="product-price">130,00 €</span>
-          <a class="btn-inquire" href="mailto:sonnemagdeburg@aol.com?subject=Anfrage%3A%20Unikat%20Nr.%202&body=Hallo%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20das%20Unikat%20Nr.%202%20(13%2C00%20%E2%82%AC).%20Ist%20dieses%20St%C3%BCck%20noch%20verf%C3%BCgbar%3F%0A%0ALiebe%20Gr%C3%BC%C3%9Fe">Anfragen</a>
+          <a class="btn-inquire" href="mailto:sonnemagdeburg@aol.com?subject=Anfrage%3A%20Unikat%20Nr.%202&body=Hallo%20Katrin%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20das%20Unikat%20Nr.%202%20(130%2C00%20%E2%82%AC).%20Ist%20dieses%20St%C3%BCck%20noch%20verf%C3%BCgbar%3F%0A%0ALiebe%20Gr%C3%BC%C3%9Fe">Anfragen</a>
         </div>
       </article>
 
@@ -523,7 +593,7 @@
         <p class="product-desc">Kreatives Einzelstück aus meiner Magdeburger Werkstatt – jedes Detail ein Original.</p>
         <div class="product-footer">
           <span class="product-price">125,00 €</span>
-          <a class="btn-inquire" href="mailto:sonnemagdeburg@aol.com?subject=Anfrage%3A%20Unikat%20Nr.%203&body=Hallo%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20das%20Unikat%20Nr.%203%20(19%2C00%20%E2%82%AC).%20Ist%20dieses%20St%C3%BCck%20noch%20verf%C3%BCgbar%3F%0A%0ALiebe%20Gr%C3%BC%C3%9Fe">Anfragen</a>
+          <a class="btn-inquire" href="mailto:sonnemagdeburg@aol.com?subject=Anfrage%3A%20Unikat%20Nr.%203&body=Hallo%20Katrin%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20das%20Unikat%20Nr.%203%20(125%2C00%20%E2%82%AC).%20Ist%20dieses%20St%C3%BCck%20noch%20verf%C3%BCgbar%3F%0A%0ALiebe%20Gr%C3%BC%C3%9Fe">Anfragen</a>
         </div>
       </article>
 
@@ -536,7 +606,7 @@
         <p class="product-desc">Schlichtes, warmes Design – ideal zum Verschenken oder Selbstbehalten.</p>
         <div class="product-footer">
           <span class="product-price">135,00 €</span>
-          <a class="btn-inquire" href="mailto:sonnemagdeburg@aol.com?subject=Anfrage%3A%20Unikat%20Nr.%204&body=Hallo%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20das%20Unikat%20Nr.%204%20(12%2C00%20%E2%82%AC).%20Ist%20dieses%20St%C3%BCck%20noch%20verf%C3%BCgbar%3F%0A%0ALiebe%20Gr%C3%BC%C3%9Fe">Anfragen</a>
+          <a class="btn-inquire" href="mailto:sonnemagdeburg@aol.com?subject=Anfrage%3A%20Unikat%20Nr.%204&body=Hallo%20Katrin%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20das%20Unikat%20Nr.%204%20(135%2C00%20%E2%82%AC).%20Ist%20dieses%20St%C3%BCck%20noch%20verf%C3%BCgbar%3F%0A%0ALiebe%20Gr%C3%BC%C3%9Fe">Anfragen</a>
         </div>
       </article>
 
@@ -547,7 +617,7 @@
   <section id="ueber">
     <div class="about-card">
       <div class="about-photo-wrap">
-        <img src="Ich.jpeg" alt="Über mich – Sonne Magdeburg" loading="lazy">
+        <img src="Ich.jpeg" alt="Katrin – Kreativ-Werkstatt Magdeburg" loading="lazy">
       </div>
       <div class="about-text">
         <h2>Mit Herz &amp; Hand in Magdeburg gefertigt</h2>
@@ -570,13 +640,13 @@
     <div class="contact-banner">
       <h2>Fragen oder Sonderwünsche?</h2>
       <p>Schreib mir jederzeit direkt per E-Mail – ich freue mich auf deine Nachricht.</p>
-      <a href="mailto:mailto:sonnemagdeburg@aol.com?subject=Nachricht%20%C3%BCber%20Sonne%20Magdeburg" class="btn-primary">E-Mail schreiben</a>
+      <a href="mailto:sonnemagdeburg@aol.com?subject=Nachricht%20%C3%BCber%20Katrins%20Kreativ-Werkstatt" class="btn-primary">E-Mail schreiben</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2026 Sonne Magdeburg &middot; Handgemachte Unikate &middot; Kontakt: sonnemagdeburg@aol.com</p>
+    <p>&copy; 2026 Katrin's Kreativ-Werkstatt &middot; Handgemachte Unikate &middot; Kontakt: sonnemagdeburg@aol.com</p>
   </footer>
 
 </body>
