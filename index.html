@@ -1,1 +1,533 @@
-<h1>Sonne Magdeburg</h1>
+<<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonne Magdeburg – Handgemachtes &amp; Kreatives</title>
+  <style>
+    :root {
+      --bg-cream: #FAF6F0;
+      --bg-card: #FFFFFF;
+      --text-dark: #2C2621;
+      --text-muted: #6B6158;
+      --accent-gold: #D49B42;
+      --accent-gold-hover: #BD8530;
+      --hero-brown: #6C4E35;
+      --hero-gold: #D8A24A;
+      --border-soft: #EAE2D6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Dezente Sonnen-Ornamente im Hintergrund */
+    .bg-sun-left, .bg-sun-right {
+      position: fixed;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.28;
+    }
+    .bg-sun-left {
+      top: 42%;
+      left: -90px;
+      width: 240px;
+    }
+    .bg-sun-right {
+      bottom: 8%;
+      right: -80px;
+      width: 260px;
+    }
+
+    /* Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 246, 240, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .nav-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+
+    .brand-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #E5B158 30%, #C88A2E 100%);
+      box-shadow: 0 0 0 4px rgba(212, 155, 66, 0.18);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.75rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--text-dark);
+    }
+
+    /* Hero Bereich */
+    .hero {
+      position: relative;
+      z-index: 1;
+      max-width: 1120px;
+      margin: 1.5rem auto 3.5rem;
+      padding: 0 1.5rem;
+    }
+
+    .hero-box {
+      position: relative;
+      border-radius: 16px;
+      padding: 5.5rem 2rem;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(115deg, var(--hero-brown) 0%, #9E7444 52%, var(--hero-gold) 100%);
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(108, 78, 53, 0.14);
+    }
+
+    .hero-sun-decor {
+      position: absolute;
+      opacity: 0.22;
+      pointer-events: none;
+    }
+    .hero-sun-decor.left {
+      bottom: -55px;
+      left: -45px;
+      width: 210px;
+    }
+    .hero-sun-decor.right {
+      top: -55px;
+      right: -45px;
+      width: 220px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4.2vw, 3.1rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      color: rgba(255, 255, 255, 0.92);
+      max-width: 560px;
+      margin: 0 auto 2rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--accent-gold);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 0.75rem 1.8rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease, transform 0.15s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-gold-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Sektionen allgemein */
+    section {
+      position: relative;
+      z-index: 1;
+      max-width: 1120px;
+      margin: 0 auto 4.5rem;
+      padding: 0 1.5rem;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .section-header h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.85rem;
+      font-weight: 400;
+      color: var(--text-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    /* Produkt-Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .product-card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 0.85rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 6px 20px rgba(44, 38, 33, 0.04);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 26px rgba(44, 38, 33, 0.08);
+    }
+
+    .product-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 8px;
+      background-color: #EFE8DD;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      position: relative;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .product-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .product-price {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text-dark);
+    }
+
+    .btn-inquire {
+      background-color: var(--accent-gold);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 0.45rem 0.95rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-inquire:hover {
+      background-color: var(--accent-gold-hover);
+    }
+
+    /* Über mich / Manufaktur */
+    .about-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 14px;
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .about-card h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.75rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    .about-card p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .info-box {
+      background: var(--bg-cream);
+      border-radius: 10px;
+      padding: 1.5rem;
+      border: 1px solid var(--border-soft);
+    }
+
+    .info-box h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .info-box ul {
+      padding-left: 1.2rem;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .info-box li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Kontakt & Footer */
+    .contact-banner {
+      text-align: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 14px;
+      padding: 3rem 1.5rem;
+    }
+
+    .contact-banner h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-banner p {
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 1.75rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem 3rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        gap: 1rem;
+      }
+      .about-card {
+        grid-template-columns: 1fr;
+        padding: 1.75rem;
+      }
+      .hero-box {
+        padding: 4rem 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Zarte Hintergrund-Sonnen -->
+  <svg class="bg-sun-left" viewBox="0 0 200 200" fill="none" stroke="#C88A2E" stroke-width="1.5">
+    <circle cx="100" cy="100" r="42"/>
+    <path d="M100 10V45M100 155V190M10 100H45M155 100H190M36 36L61 61M139 139L164 164M164 36L139 61M61 139L36 164"/>
+  </svg>
+  <svg class="bg-sun-right" viewBox="0 0 200 200" fill="none" stroke="#C88A2E" stroke-width="1.5">
+    <circle cx="100" cy="100" r="46"/>
+    <path d="M100 8V42M100 158V192M8 100H42M158 100H192M35 35L59 59M141 141L165 165M165 35L141 59M59 141L35 165"/>
+  </svg>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#home" class="brand">
+        <span class="brand-dot"></span>
+        Sonne Magdeburg
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#home">Start</a></li>
+          <li><a href="#produkte">Lieblingsstücke</a></li>
+          <li><a href="#ueber">Über mich</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <div id="home" class="hero">
+    <div class="hero-box">
+      <svg class="hero-sun-decor left" viewBox="0 0 200 200" fill="none" stroke="#FFFFFF" stroke-width="2">
+        <circle cx="100" cy="100" r="45"/>
+        <path d="M100 10V42M100 158V190M10 100H42M158 100H190M36 36L60 60M140 140L164 164M164 36L140 60M60 140L36 164"/>
+      </svg>
+      <svg class="hero-sun-decor right" viewBox="0 0 200 200" fill="none" stroke="#FFFFFF" stroke-width="2">
+        <circle cx="100" cy="100" r="45"/>
+        <path d="M100 10V42M100 158V190M10 100H42M158 100H190M36 36L60 60M140 140L164 164M164 36L140 60M60 140L36 164"/>
+      </svg>
+      <h1>Handgemachtes &amp; Kreatives<br>aus Magdeburg</h1>
+      <p>Liebevoll gestaltete Unikate für dich und dein Zuhause – jedes Stück von Hand gefertigt.</p>
+      <a href="#produkte" class="btn-primary">Stücke entdecken</a>
+    </div>
+  </div>
+
+  <!-- Produkt-Katalog -->
+  <section id="produkte">
+    <div class="section-header">
+      <h2>Aktuelle Lieblingsstücke</h2>
+      <p>Jedes Teil ist ein Einzelstück. Klicke auf „Anfragen“, um mir direkt eine Nachricht zu schreiben.</p>
+    </div>
+
+    <div class="product-grid">
+
+      <!-- Artikel 1 -->
+      <article class="product-card">
+        <div class="product-image">
+          <!-- Später ersetzen durch: <img src="bilder/karte-01.jpg" alt="Handgestempelte Karten"> -->
+          <span>Bild folgt (bilder/artikel-1.jpg)</span>
+        </div>
+        <h3 class="product-title">Handgestempelte Karten</h3>
+        <p class="product-desc">Zarte Naturpapiere mit Trockenblumen und individuellem Stempelmotiv.</p>
+        <div class="product-footer">
+          <span class="product-price">17,00 €</span>
+          <a class="btn-inquire" href="mailto:info@sonnemagdeburg.de?subject=Anfrage%3A%20Handgestempelte%20Karten&body=Hallo%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20%E2%80%9EHandgestempelte%20Karten%E2%80%9C%20(17%2C00%20%E2%82%AC).%20Ist%20dieses%20St%C3%BCck%20noch%20verf%C3%BCgbar%3F%0A%0ALiebe%20Gr%C3%BC%C3%9Fe">Anfragen</a>
+        </div>
+      </article>
+
+      <!-- Artikel 2 -->
+      <article class="product-card">
+        <div class="product-image">
+          <span>Bild folgt (bilder/artikel-2.jpg)</span>
+        </div>
+        <h3 class="product-title">Kreative Deko-Objekte</h3>
+        <p class="product-desc">Liebevoll verpackte Geschenksets und kleine Aufmerksamkeiten aus Papier &amp; Naturmaterialien.</p>
+        <div class="product-footer">
+          <span class="product-price">13,00 €</span>
+          <a class="btn-inquire" href="mailto:info@sonnemagdeburg.de?subject=Anfrage%3A%20Kreative%20Deko-Objekte&body=Hallo%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20%E2%80%9EKreative%20Deko-Objekte%E2%80%9C%20(13%2C00%20%E2%82%AC).%20Ist%20dieses%20St%C3%BCck%20noch%20verf%C3%BCgbar%3F%0A%0ALiebe%20Gr%C3%BC%C3%9Fe">Anfragen</a>
+        </div>
+      </article>
+
+      <!-- Artikel 3 -->
+      <article class="product-card">
+        <div class="product-image">
+          <span>Bild folgt (bilder/artikel-3.jpg)</span>
+        </div>
+        <h3 class="product-title">Handgefertigte Gefäße</h3>
+        <p class="product-desc">Kleine Becher und Schalen in warmen Erdtönen – ideal für Trockenblumen oder Teelichter.</p>
+        <div class="product-footer">
+          <span class="product-price">19,00 €</span>
+          <a class="btn-inquire" href="mailto:info@sonnemagdeburg.de?subject=Anfrage%3A%20Handgefertigte%20Gef%C3%A4%C3%9Fe&body=Hallo%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20%E2%80%9EHandgefertigte%20Gef%C3%A4%C3%9Fe%E2%80%9C%20(19%2C00%20%E2%82%AC).%20Ist%20dieses%20St%C3%BCck%20noch%20verf%C3%BCgbar%3F%0A%0ALiebe%20Gr%C3%BC%C3%9Fe">Anfragen</a>
+        </div>
+      </article>
+
+      <!-- Artikel 4 -->
+      <article class="product-card">
+        <div class="product-image">
+          <span>Bild folgt (bilder/artikel-4.jpg)</span>
+        </div>
+        <h3 class="product-title">Tisch- &amp; Wohn-Deko</h3>
+        <p class="product-desc">Schlichte Unikate, die Wärme und Ruhe auf deinen Tisch bringen.</p>
+        <div class="product-footer">
+          <span class="product-price">12,00 €</span>
+          <a class="btn-inquire" href="mailto:info@sonnemagdeburg.de?subject=Anfrage%3A%20Tisch-%20%26%20Wohn-Deko&body=Hallo%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20%E2%80%9ETisch-%20%26%20Wohn-Deko%E2%80%9C%20(12%2C00%20%E2%82%AC).%20Ist%20dieses%20St%C3%BCck%20noch%20verf%C3%BCgbar%3F%0A%0ALiebe%20Gr%C3%BC%C3%9Fe">Anfragen</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Über mich & Ablauf -->
+  <section id="ueber">
+    <div class="about-card">
+      <div>
+        <h2>Mit Herz &amp; Hand in Magdeburg gefertigt</h2>
+        <p>Schön, dass du hier bist! In meiner kleinen Kreativwerkstatt entstehen Dinge, die Freude machen – fernab von Massenware, dafür mit viel Liebe zum Detail, natürlichen Materialien und Zeit für jedes einzelne Stück.</p>
+        <p>Du hast einen besonderen Wunsch oder suchst ein persönliches Geschenk? Schreib mir gerne eine Nachricht.</p>
+      </div>
+      <div class="info-box">
+        <h3>So einfach funktioniert’s</h3>
+        <ul>
+          <li><strong>1. Lieblingsstück aussuchen:</strong> Stöbere in Ruhe durch die aktuellen Unikate.</li>
+          <li><strong>2. Unverbindlich anfragen:</strong> Ein Klick auf „Anfragen“ öffnet direkt eine vorbereitete E-Mail an mich.</li>
+          <li><strong>3. Abholung oder Versand:</strong> Wir klären kurz die Details – Abholung in Magdeburg oder sicherer Versand sind möglich.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="kontakt">
+    <div class="contact-banner">
+      <h2>Fragen oder Sonderwünsche?</h2>
+      <p>Schreib mir jederzeit direkt per E-Mail – ich freue mich auf deine Nachricht.</p>
+      <a href="mailto:info@sonnemagdeburg.de?subject=Nachricht%20%C3%BCber%20Sonne%20Magdeburg" class="btn-primary">E-Mail schreiben</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Sonne Magdeburg &middot; Handgemachte Unikate &middot; Kontakt: info@sonnemagdeburg.de</p>
+  </footer>
+
+</body>
+</html>
