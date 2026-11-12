@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Sonne MD – Handgemachtes &amp; Kreatives</title>
-  <!-- Mini-Dackel Favicon (Inline-SVG ohne externe Datei) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23FAF6F0'/%3E%3Cpath d='M7 36 C4 34, 3 30, 4 28 C5 26, 7 27, 8 29 C9 31, 10 33, 13 32 L22 31 C28 30, 39 30, 46 29 C49 29, 50 26, 52 22 C53 19, 55 17, 58 17 C60 17, 62 18, 63 20 L63 23 C62 25, 60 26, 57 26 L55 26 C54 29, 53 31, 52 33 L52 44 C52 45, 50 46, 49 46 C48 46, 47 45, 47 44 L47 37 C45 38, 43 38, 41 38 L41 44 C41 45, 39 46, 38 46 C37 46, 36 45, 36 44 L36 38 C28 39, 20 39, 14 38 L13 44 C13 45, 11 46, 10 46 C9 46, 8 45, 8 44 L9 38 C8 38, 7 37, 7 36 Z' fill='%23C88A2E'/%3E%3Cpath d='M55 19 C52 19, 50 23, 51 28 C51 31, 53 32, 55 31 C57 30, 57 25, 56 21 Z' fill='%236C4E35'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=6">
+  <link rel="apple-touch-icon" href="favicon.svg?v=6">
   <style>
     :root {
       --bg-cream: #FAF6F0;
@@ -42,36 +42,36 @@
       -webkit-text-size-adjust: 100%;
     }
 
-    /* Vier versetzte, organisch verteilte Dackel-Konturen im Hintergrund */
+    /* Vier versetzte, reduzierte Dackel-Strichsilhouetten im Hintergrund */
     .bg-dachshund {
       position: fixed;
       pointer-events: none;
       z-index: 0;
-      opacity: 0.24;
+      opacity: 0.28;
     }
     .bg-dachshund-1 {
       top: 19%;
       left: 2%;
-      width: 145px;
-      transform: rotate(-4deg);
+      width: 175px;
+      transform: rotate(-3deg);
     }
     .bg-dachshund-2 {
       top: 37%;
-      right: 5%;
-      width: 175px;
+      right: 4.5%;
+      width: 195px;
       transform: rotate(3deg);
     }
     .bg-dachshund-3 {
       top: 63%;
-      left: 7%;
-      width: 130px;
-      transform: rotate(5deg);
+      left: 6.5%;
+      width: 160px;
+      transform: rotate(4deg);
     }
     .bg-dachshund-4 {
       bottom: 4%;
       right: 1.5%;
-      width: 160px;
-      transform: rotate(-3deg);
+      width: 185px;
+      transform: rotate(-2deg);
     }
 
     /* Navigation */
@@ -472,8 +472,8 @@
       }
 
       .bg-dachshund {
-        width: 98px;
-        opacity: 0.16;
+        width: 115px;
+        opacity: 0.18;
       }
 
       section {
@@ -505,32 +505,28 @@
 </head>
 <body>
 
-  <!-- Vier versetzte, nicht ausgefüllte Dackel-Silhouetten im Hintergrund -->
-  <!-- Dackel 1: oben links (läuft nach rechts) -->
-  <svg class="bg-dachshund bg-dachshund-1" viewBox="0 0 240 120" fill="none" stroke="#C88A2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M18 68 C10 64, 6 56, 8 50 C10 46, 14 48, 16 53 C18 58, 22 61, 28 60 L54 57 C74 55, 118 55, 142 54 C150 53, 155 46, 160 36 C163 29, 170 25, 179 25 C186 25, 192 28, 196 32 L214 35 C220 36, 223 40, 221 44 C219 48, 212 49, 204 49 L194 49 C192 55, 189 61, 185 65 C186 73, 187 84, 187 93 C187 96, 183 98, 179 98 C176 98, 174 96, 174 93 L173 76 C168 78, 162 79, 156 79 L155 93 C155 96, 151 98, 148 98 C145 98, 143 96, 143 93 L143 79 C116 80, 82 80, 58 79 L56 93 C56 96, 52 98, 49 98 C46 98, 44 96, 44 93 L45 78 C39 78, 34 78, 30 78 L27 93 C26 96, 22 98, 19 98 C16 98, 14 96, 15 93 L19 74 C18 72, 18 70, 18 68 Z"/>
-    <path d="M174 28 C166 29, 162 38, 163 49 C164 56, 170 59, 175 56 C180 53, 181 43, 178 33 Z"/>
+  <!-- Vier versetzte, anatomisch stimmige One-Line-Dackel im Hintergrund -->
+  <!-- Dackel 1: oben links (blickt nach rechts) -->
+  <svg class="bg-dachshund bg-dachshund-1" viewBox="0 0 180 72" fill="none" stroke="#C88A2E" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M12 28 L22 39 C44 41, 78 41, 102 38 C110 37, 114 23, 122 19 C130 15, 144 17, 162 23 C157 29, 145 30, 134 28 C134 44, 129 55, 124 53 C120 51, 121 39, 125 30 M29 40 L26 61 M40 41 L42 61 M100 39 L98 61 M110 38 L114 61"/>
   </svg>
 
-  <!-- Dackel 2: mittig rechts (läuft nach links) -->
-  <svg class="bg-dachshund bg-dachshund-2" viewBox="0 0 240 120" fill="none" stroke="#C88A2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <g transform="translate(240, 0) scale(-1, 1)">
-      <path d="M18 68 C10 64, 6 56, 8 50 C10 46, 14 48, 16 53 C18 58, 22 61, 28 60 L54 57 C74 55, 118 55, 142 54 C150 53, 155 46, 160 36 C163 29, 170 25, 179 25 C186 25, 192 28, 196 32 L214 35 C220 36, 223 40, 221 44 C219 48, 212 49, 204 49 L194 49 C192 55, 189 61, 185 65 C186 73, 187 84, 187 93 C187 96, 183 98, 179 98 C176 98, 174 96, 174 93 L173 76 C168 78, 162 79, 156 79 L155 93 C155 96, 151 98, 148 98 C145 98, 143 96, 143 93 L143 79 C116 80, 82 80, 58 79 L56 93 C56 96, 52 98, 49 98 C46 98, 44 96, 44 93 L45 78 C39 78, 34 78, 30 78 L27 93 C26 96, 22 98, 19 98 C16 98, 14 96, 15 93 L19 74 C18 72, 18 70, 18 68 Z"/>
-      <path d="M174 28 C166 29, 162 38, 163 49 C164 56, 170 59, 175 56 C180 53, 181 43, 178 33 Z"/>
+  <!-- Dackel 2: mittig rechts (blickt nach links) -->
+  <svg class="bg-dachshund bg-dachshund-2" viewBox="0 0 180 72" fill="none" stroke="#C88A2E" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g transform="translate(180, 0) scale(-1, 1)">
+      <path d="M12 28 L22 39 C44 41, 78 41, 102 38 C110 37, 114 23, 122 19 C130 15, 144 17, 162 23 C157 29, 145 30, 134 28 C134 44, 129 55, 124 53 C120 51, 121 39, 125 30 M29 40 L26 61 M40 41 L42 61 M100 39 L98 61 M110 38 L114 61"/>
     </g>
   </svg>
 
-  <!-- Dackel 3: unten links (läuft nach rechts) -->
-  <svg class="bg-dachshund bg-dachshund-3" viewBox="0 0 240 120" fill="none" stroke="#C88A2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M18 68 C10 64, 6 56, 8 50 C10 46, 14 48, 16 53 C18 58, 22 61, 28 60 L54 57 C74 55, 118 55, 142 54 C150 53, 155 46, 160 36 C163 29, 170 25, 179 25 C186 25, 192 28, 196 32 L214 35 C220 36, 223 40, 221 44 C219 48, 212 49, 204 49 L194 49 C192 55, 189 61, 185 65 C186 73, 187 84, 187 93 C187 96, 183 98, 179 98 C176 98, 174 96, 174 93 L173 76 C168 78, 162 79, 156 79 L155 93 C155 96, 151 98, 148 98 C145 98, 143 96, 143 93 L143 79 C116 80, 82 80, 58 79 L56 93 C56 96, 52 98, 49 98 C46 98, 44 96, 44 93 L45 78 C39 78, 34 78, 30 78 L27 93 C26 96, 22 98, 19 98 C16 98, 14 96, 15 93 L19 74 C18 72, 18 70, 18 68 Z"/>
-    <path d="M174 28 C166 29, 162 38, 163 49 C164 56, 170 59, 175 56 C180 53, 181 43, 178 33 Z"/>
+  <!-- Dackel 3: unten links (blickt nach rechts) -->
+  <svg class="bg-dachshund bg-dachshund-3" viewBox="0 0 180 72" fill="none" stroke="#C88A2E" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M12 28 L22 39 C44 41, 78 41, 102 38 C110 37, 114 23, 122 19 C130 15, 144 17, 162 23 C157 29, 145 30, 134 28 C134 44, 129 55, 124 53 C120 51, 121 39, 125 30 M29 40 L26 61 M40 41 L42 61 M100 39 L98 61 M110 38 L114 61"/>
   </svg>
 
-  <!-- Dackel 4: ganz unten rechts (läuft nach links) -->
-  <svg class="bg-dachshund bg-dachshund-4" viewBox="0 0 240 120" fill="none" stroke="#C88A2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <g transform="translate(240, 0) scale(-1, 1)">
-      <path d="M18 68 C10 64, 6 56, 8 50 C10 46, 14 48, 16 53 C18 58, 22 61, 28 60 L54 57 C74 55, 118 55, 142 54 C150 53, 155 46, 160 36 C163 29, 170 25, 179 25 C186 25, 192 28, 196 32 L214 35 C220 36, 223 40, 221 44 C219 48, 212 49, 204 49 L194 49 C192 55, 189 61, 185 65 C186 73, 187 84, 187 93 C187 96, 183 98, 179 98 C176 98, 174 96, 174 93 L173 76 C168 78, 162 79, 156 79 L155 93 C155 96, 151 98, 148 98 C145 98, 143 96, 143 93 L143 79 C116 80, 82 80, 58 79 L56 93 C56 96, 52 98, 49 98 C46 98, 44 96, 44 93 L45 78 C39 78, 34 78, 30 78 L27 93 C26 96, 22 98, 19 98 C16 98, 14 96, 15 93 L19 74 C18 72, 18 70, 18 68 Z"/>
-      <path d="M174 28 C166 29, 162 38, 163 49 C164 56, 170 59, 175 56 C180 53, 181 43, 178 33 Z"/>
+  <!-- Dackel 4: ganz unten rechts (blickt nach links) -->
+  <svg class="bg-dachshund bg-dachshund-4" viewBox="0 0 180 72" fill="none" stroke="#C88A2E" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g transform="translate(180, 0) scale(-1, 1)">
+      <path d="M12 28 L22 39 C44 41, 78 41, 102 38 C110 37, 114 23, 122 19 C130 15, 144 17, 162 23 C157 29, 145 30, 134 28 C134 44, 129 55, 124 53 C120 51, 121 39, 125 30 M29 40 L26 61 M40 41 L42 61 M100 39 L98 61 M110 38 L114 61"/>
     </g>
   </svg>
 
