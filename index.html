@@ -4,8 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Sonne MD – Handgemachtes &amp; Kreatives</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=6">
-  <link rel="apple-touch-icon" href="favicon.svg?v=6">
+  <link id="favicon" rel="icon" type="image/png" href="favicon.svg?v=7">
+  <link id="apple-icon" rel="apple-touch-icon" href="favicon.svg?v=7">
+  <script>
+    (function() {
+      var c = document.createElement('canvas');
+      c.width = 64; c.height = 64;
+      var ctx = c.getContext('2d');
+      ctx.fillStyle = '#FAF6F0';
+      ctx.beginPath();
+      if (ctx.roundRect) {
+        ctx.roundRect(0, 0, 64, 64, 16);
+      } else {
+        ctx.rect(0, 0, 64, 64);
+      }
+      ctx.fill();
+      var p = new Path2D('M6 27 L10 33 C20 34, 33 34, 42 32 C45 31, 47 24, 50 22 C53 20, 58 21, 61 24 C59 27, 54 27, 51 26 C51 33, 49 39, 47 38 C46 37, 46 31, 48 27 M13 34 L12 45 M18 34 L19 45 M41 33 L40 45 M45 32 L47 45');
+      ctx.strokeStyle = '#6C4E35';
+      ctx.lineWidth = 3.2;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.stroke(p);
+      var png = c.toDataURL('image/png');
+      document.getElementById('favicon').href = png;
+      document.getElementById('apple-icon').href = png;
+    })();
+  </script>
   <style>
     :root {
       --bg-cream: #FAF6F0;
